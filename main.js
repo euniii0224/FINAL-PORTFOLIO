@@ -70,3 +70,62 @@ function typeWriterEffect() {
     setTimeout(typeWriterEffect, typingSpeed)
   }
 }
+
+const canvas = document.getElementById('snow')
+const ctx = canvas.getContext('2d')
+
+let width, height
+function resize() {
+  width = window.innerWidth
+  height = window.innerHeight
+  canvas.width = width
+  canvas.height = height
+}
+resize()
+window.addEventListener('resize', resize)
+
+const snowflakes = []
+const maxFlakes = 100
+
+function random(min, max) {
+  return Math.random() * (max - min) + min
+}
+
+class Snowflake {
+  constructor() {
+    this.x = random(0, width)
+    this.y = random(-height, 0)
+    this.radius = random(1, 4)
+    this.speed = random(1, 3)
+    this.wind = random(-0.5, 0.5)
+  }
+  update() {
+    this.y += this.speed
+    this.x += this.wind
+    if (this.y > height) {
+      this.y = random(-10, 0)
+      this.x = random(0, width)
+    }
+  }
+  draw() {
+    ctx.beginPath()
+    ctx.fillStyle = 'white'
+    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2)
+    ctx.fill()
+  }
+}
+
+for (let i = 0; i < maxFlakes; i++) {
+  snowflakes.push(new Snowflake())
+}
+
+function animate() {
+  ctx.clearRect(0, 0, width, height)
+  snowflakes.forEach((flake) => {
+    flake.update()
+    flake.draw()
+  })
+  requestAnimationFrame(animate)
+}
+
+animate()

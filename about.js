@@ -1,16 +1,22 @@
-// const text = '안녕하세요! 원종은입니다 🥹🩷'
-// const typingText = document.getElementById('typing-text')
-// let index = 0
+const text = '원종은'
+const typingText = document.getElementById('typing-text')
+let index = 0
 
-// function type() {
-//   if (index < text.length) {
-//     typingText.innerHTML += text.charAt(index)
-//     index++
-//     setTimeout(type, 100)
-//   }
-// }
+function type() {
+  if (index < text.length) {
+    typingText.innerHTML += text.charAt(index)
+    index++
+    setTimeout(type, 200)
+  } else {
+    setTimeout(() => {
+      typingText.innerHTML = ''
+      index = 0
+      type()
+    }, 1000)
+  }
+}
 
-// type()
+type()
 
 const togglebtn = document.getElementById('toggle-btn')
 const moreInfo = document.getElementById('more-info')
@@ -42,3 +48,15 @@ window.addEventListener('DOMContentLoaded', () => {
     bar.style.animation = 'grow 1.5s forwards'
   })
 })
+
+// function typeWriterEffect() {
+//   if (charIndex < textToType.length) {
+//     if (textToType.charAt(charIndex) === '\n') {
+//       typingElement.innerHTML += '<br>'
+//     } else {
+//       typingElement.innerHTML += textToType.charAt(charIndex)
+//     }
+//     charIndex++
+//     setTimeout(typeWriterEffect, typingSpeed)
+//   }
+// }
