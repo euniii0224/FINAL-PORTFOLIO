@@ -1,0 +1,327 @@
+@font-face {
+  font-family: 'EF_jejudoldam';
+  src: url('https://fastly.j sdelivr.net/gh/projectnoonnu/noonfonts_2210-EF@1.0/EF_jejudoldam.woff2')
+    format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #334e70;
+  /* background-color: #4981af; */
+  color: white;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #334e70;
+  padding: 10px 0;
+  z-index: 1000;
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.navbar .container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.nav ul {
+  display: flex;
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  padding: 0;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.nav i {
+  margin-right: 8px;
+}
+
+.logo a {
+  color: white;
+  text-decoration: none;
+  font-size: 25px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo i {
+  margin-right: 8px;
+  font-size: 25px;
+  vertical-align: middle;
+  color: white;
+}
+
+/* Main Section */
+#main .container {
+  margin-top: 100px;
+  margin-left: 230px;
+  margin-right: 230px;
+  height: 100%;
+}
+
+#main h1 {
+  padding: 200px 0 100px 50px; /*위/오/아래/왼 여백*/
+  float: left;
+  font-size: 50px;
+  color: #eee7e0;
+  font-weight: 900;
+  text-shadow: 1px 1px 0px white;
+}
+
+.mySlides {
+  display: none;
+}
+
+#main img {
+  vertical-align: middle;
+}
+
+.big-slideshow-container {
+  position: relative;
+  top: 2%;
+  float: right;
+  margin-top: 90px;
+}
+
+.slideshow-container img {
+  width: 560px;
+  height: 540px;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.big-dot {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.dot {
+  height: 20px;
+  width: 20px;
+  margin: 0 8px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.activition {
+  background-color: #717171;
+}
+
+/* Footer */
+footer {
+  background-color: #334e70;
+  color: white;
+  text-align: center;
+  padding: 3px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+footer p {
+  font-size: 20px;
+}
+
+/* Self-Introduce */
+
+.selfintroduce {
+  padding: 110px 0px;
+  display: flex;
+  justify-content: center;
+  background-color: #334e70;
+}
+
+.selfintroduce-box {
+  max-width: 1100px;
+  width: 100%;
+  background-color: white;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(34, 24, 24, 0);
+  color: #272525;
+}
+
+.about-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.selfintroduce .selfintroduce-box .about-box .profile-img {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+.selfintroduce .selfintroduce-box .about-box .profile-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.profile-info {
+  text-align: center;
+  margin-top: 0;
+}
+
+.profile-info h1 {
+  /* font-family: 'Nanum Pen Script'; */
+  /* font-family: 'Nanum Gothic Coding', monospace; */
+  font-weight: 900;
+  font-size: 90px;
+  color: #334e70;
+  margin: 0 0 15px 0px;
+}
+
+.profile-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.profile-info ul li {
+  /* font-family: 'Nanum Gothic Coding', monospace; */
+  font-size: 25px;
+  line-height: 2.5;
+  margin-bottom: 5px;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+
+.profile-info ul li.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.typing-text {
+  text-align: center;
+}
+
+#more-info {
+  display: none;
+  font-size: 30px;
+  font-family: 'Nanum Pen Script';
+}
+
+/* Project */
+.task-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  background-color: #efefef;
+  border: none;
+  font-size: 16px;
+  font-family: 'Nanum Gothic Coding';
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.task-toggle:hover {
+  background-color: #e0e0e0;
+}
+
+.task-content {
+  display: none;
+  padding: 20px;
+  background-color: #fff;
+  border-left: 4px solid #999;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  margin-top: 5px;
+}
+
+/* .arrow {
+  font-weight: bold;
+  user-select: none;
+} */
+
+.task-images {
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* .task-images img {
+  width: 50%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+} */
+
+.slide-image {
+  display: none;
+  width: 400px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.slide-image.active {
+  display: block;
+}
+
+.slide-buttons {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.slide-buttons button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  margin: 0 10px;
+  font-size: 16px;
+  border-radius: 4px;
+  transition: background color 0.3s ease;
+}
+
+slide-buttons button:hover {
+  background-color: #45a049;
+}
