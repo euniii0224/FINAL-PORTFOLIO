@@ -1,7 +1,14 @@
+/* @font-face {
+  font-family: 'DungGeunMo';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+} */
 @font-face {
-  font-family: 'EF_jejudoldam';
-  src: url('https://fastly.j sdelivr.net/gh/projectnoonnu/noonfonts_2210-EF@1.0/EF_jejudoldam.woff2')
-    format('woff2');
+  font-family: 'yg-jalnan';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff')
+    format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -11,6 +18,8 @@ body {
   padding: 0;
   background-color: #334e70;
   /* background-color: #4981af; */
+  /* font-family: 'DungGeunMo', monospace; */
+  font-family: 'yg-jalnan', monospace;
   color: white;
 }
 
@@ -50,7 +59,7 @@ body {
 .nav a {
   color: white;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 35px;
   font-weight: bold;
 }
 
@@ -61,7 +70,7 @@ body {
 .logo a {
   color: white;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 35px;
   font-weight: bold;
   display: flex;
   align-items: center;
@@ -178,6 +187,9 @@ footer p {
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(34, 24, 24, 0);
   color: #272525;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
 .about-box {
@@ -185,6 +197,66 @@ footer p {
   flex-direction: column;
   align-items: center;
   gap: 15px;
+}
+
+.mbti-box {
+  padding-top: 10px;
+  border-top: 1px solid #ccc;
+  text-align: center;
+}
+
+.mbti-list {
+  list-style: none;
+  padding: 0;
+  display: inline-block;
+  /* width: 300px; */
+}
+
+.mbti-list li {
+  margin-bottom: 15px;
+}
+
+.mbti-list strong {
+  display: inline-block;
+  width: 20px;
+}
+
+.bar-container {
+  display: inline-block;
+  vertical-align: middle;
+  width: 250px;
+  height: 20px;
+  background-color: #eee;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-left: 10px;
+}
+
+.bar {
+  height: 100%;
+  background-color: #5084c4;
+  border-radius: 10px 0 0 10px;
+  width: 0; /* 초기 너비 0으로 설정 */
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+}
+
+.percent-text {
+  width: 40px; /* 텍스트 공간 확보 */
+  text-align: left;
+  font-weight: bold;
+  color: #333;
+  margin-left: 10px;
+}
+
+/* 애니메이션 정의 */
+@keyframes grow {
+  from {
+    width: 0;
+  }
+  to {
+    width: var(--target-width);
+  }
 }
 
 .selfintroduce .selfintroduce-box .about-box .profile-img {
@@ -242,8 +314,8 @@ footer p {
 
 #more-info {
   display: none;
-  font-size: 30px;
-  font-family: 'Nanum Pen Script';
+  font-size: 20px;
+  font-family: 'yg-jalnan', monospace;
 }
 
 /* Project */
@@ -256,7 +328,7 @@ footer p {
   background-color: #efefef;
   border: none;
   font-size: 16px;
-  font-family: 'Nanum Gothic Coding';
+  font-family: 'yg-jalnan', monospace;
   cursor: pointer;
   transition: background 0.3s ease;
 }

@@ -32,3 +32,13 @@ document.addEventListener('DOMContentLoaded', function () {
     }, delay * (index + 1))
   })
 })
+
+window.addEventListener('DOMContentLoaded', () => {
+  const bars = document.querySelectorAll('.bar')
+
+  bars.forEach((bar) => {
+    const percent = bar.getAttribute('data-percent')
+    bar.style.setProperty('--target-width', percent + '%')
+    bar.style.animation = 'grow 1.5s forwards'
+  })
+})
