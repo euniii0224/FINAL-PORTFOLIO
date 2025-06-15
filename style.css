@@ -89,25 +89,35 @@ body {
 .nav i {
   margin-right: 8px;
 }
-
+/* 태블릿: 767px 이하 */
 @media (max-width: 767px) {
-  .nav-menu {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  .nav ul {
+    gap: 20px; /* 간격 줄임 */
+  }
+
+  .nav li a {
+    font-size: 20px; /* 글자 크기 줄임 */
   }
 }
 
-/* 💻 PC - 가로로 배치 */
-@media (min-width: 768px) {
-  .nav-menu {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
+/* 모바일: 480px 이하 */
+@media (max-width: 480px) {
+  .nav ul {
+    gap: 10px; /* 더 좁은 간격 */
   }
 
-  .navbar .logo {
-    margin-bottom: 0;
+  .nav li a {
+    font-size: 16px; /* 더 작은 글자 크기 */
+  }
+
+  .navbar .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav ul {
+    flex-direction: row; /* 가로 유지 */
+    flex-wrap: wrap; /* 줄바꿈 허용 */
   }
 }
 
