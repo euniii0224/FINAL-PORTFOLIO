@@ -90,6 +90,27 @@ body {
   margin-right: 8px;
 }
 
+@media (max-width: 767px) {
+  .nav-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* 💻 PC - 가로로 배치 */
+@media (min-width: 768px) {
+  .nav-menu {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .navbar .logo {
+    margin-bottom: 0;
+  }
+}
+
 .logo a {
   color: white;
   text-decoration: none;
