@@ -595,34 +595,6 @@ slide-buttons button:hover {
   margin-bottom: 60px;
 }
 
-.scroll-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: #0077cc;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 35px;
-  height: 35px;
-  cursor: pointer;
-  z-index: 10;
-  opacity: 0.7;
-  transition: opacity 0.3s;
-}
-
-.scroll-btn:hover {
-  opacity: 1;
-}
-
-.left-btn {
-  left: 0;
-}
-
-.right-btn {
-  right: 0;
-}
-
 .team-section h2 {
   font-size: 32px;
   margin-bottom: 40px;
@@ -630,7 +602,7 @@ slide-buttons button:hover {
 
 .team-container {
   display: flex;
-  overflow-x: auto;
+
   flex-wrap: nowrap;
   justify-content: center;
   padding-bottom: 10px;
@@ -688,22 +660,39 @@ slide-buttons button:hover {
   color: #0077cc;
 }
 
-.team-track {
-  display: flex;
-  gap: 40px;
-}
 @media (max-width: 768px) {
   .team-container {
-    width: 100vw; /* 화면 가로 크기 */
-  }
-
-  .member-card {
-    width: 100vw; /* 화면 가득 카드 한 개 */
-    max-width: none;
-    margin: 0;
+    flex-wrap: wrap; /* ✅ 줄바꿈 허용 */
+    justify-content: center;
+    overflow-x: hidden; /* ✅ 가로 스크롤 없애기 */
+    padding: 0 10px; /* ✅ 살짝 여백 */
   }
 
   .team-track {
-    gap: 0; /* 카드 사이 간격 없애기 */
+    flex-direction: column; /* ✅ 세로 쌓기 */
+    gap: 20px;
+  }
+
+  .member-card {
+    width: 100%; /* ✅ 화면 너비만큼 */
+    max-width: 400px; /* ✅ 너무 커지지 않게 제한 */
+    margin: 0 auto; /* ✅ 가운데 정렬 */
+  }
+}
+
+@media (max-width: 1024px) {
+  .team-container {
+    overflow-x: hidden; /* 가로 스크롤 제거 */
+    flex-wrap: wrap; /* 줄바꿈되게 */
+    justify-content: center;
+  }
+
+  .member-card {
+    width: 45%; /* 두 개씩 배치 */
+    margin: 10px;
+  }
+
+  .team-track {
+    gap: 20px;
   }
 }

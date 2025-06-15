@@ -1,4 +1,4 @@
-const container = document.querySelector('.team-container')
+/*const container = document.querySelector('.team-container')
 const leftBtn = document.querySelector('.left-btn')
 const rightBtn = document.querySelector('.right-btn')
 const cards = document.querySelectorAll('.member-card')
@@ -24,4 +24,4 @@ leftBtn.addEventListener('click', () => {
 
 rightBtn.addEventListener('click', () => {
   container.scrollBy({ left: scrollAmount, behavior: 'smooth' })
-})
+})*/
